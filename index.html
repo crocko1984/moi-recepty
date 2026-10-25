@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#d9573c" />
+    <meta name="description" content="Небольшая публичная книга рецептов." />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icons/icon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Мои рецепты</title>
+  </head>
+  <body>
+    <main class="app">
+      <header class="hero">
+        <p class="eyebrow">Кулинарная книга</p>
+        <h1>Мои рецепты</h1>
+        <p class="intro">20 простых идей на каждый день</p>
+      </header>
+
+      <nav class="tabs" aria-label="Разделы рецептов">
+        <button class="tab is-active" data-tab="all" type="button">Все <span>20</span></button>
+        <button class="tab" data-tab="quick" type="button">Быстрые <span>7</span></button>
+        <button class="tab" data-tab="bake" type="button">Выпечка <span>5</span></button>
+      </nav>
+
+      <label class="search"><span class="sr-only">Поиск рецепта</span><input id="search" type="search" placeholder="Найти рецепт" autocomplete="off" /></label>
+      <section id="recipes" class="recipes" aria-live="polite"></section>
+      <p id="empty" class="empty" hidden>Ничего не найдено. Попробуйте другой запрос.</p>
+    </main>
+    <template id="recipe-template">
+      <article class="recipe">
+        <div class="recipe-top"><span class="emoji" aria-hidden="true"></span><span class="tag"></span></div>
+        <h2></h2><p class="meta"></p><p class="description"></p>
+      </article>
+    </template>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "Мои рецепты",
+  "short_name": "Рецепты",
+  "description": "Небольшая публичная книга рецептов.",
+  "lang": "ru",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fff8f3",
+  "theme_color": "#d9573c",
+  "icons": [{ "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
