@@ -1,5 +1,5 @@
-const CACHE = 'moi-recepty-v4';
-const ASSETS = ['./', './index.html', './manifest.webmanifest', './service-worker.js', './icons/icon.svg'];
+const CACHE = 'moi-recepty-v5';
+const ASSETS = ['./', './index.html', './shared-recipes.json', './manifest.webmanifest', './service-worker.js', './icons/icon.svg'];
 self.addEventListener('install', event => event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting())));
 self.addEventListener('activate', event => event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', event => { if (event.request.method === 'GET') event.respondWith(caches.match(event.request).then(saved => saved || fetch(event.request))); });
